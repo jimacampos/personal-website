@@ -7,6 +7,7 @@ export const siteConfig = {
     email: "jimmy.campos.b@gmail.com",
     linkedin: "https://linkedin.com/in/jimmycamposblanco",
     github: "https://github.com/jimacampos",
+    twitter: ''
   },
   aboutMe:
     "I'm a Solutions Architect with 15+ years in the industry, currently at Microsoft (M365 Core), specializing in Azure cloud architecture, AI implementation, and translating business needs into technical strategy. Beyond building scalable solutions, I'm passionate about growing our industry through mentorship—having trained 200+ professionals and served on NGO boards since 2015 to increase STEAM representation, impacting 500+ women in tech. I speak on cloud architecture, AI, technical leadership, and building inclusive tech teams.",
