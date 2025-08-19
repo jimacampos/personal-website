@@ -51,6 +51,14 @@ export const siteConfig = {
       description: "Curated resources for technical professionals looking to learn about AI development, implementation, and best practices.",
       urls: [
         {
+          title: "My thoughts on AI (Blog Post)",
+          url: "https://www.linkedin.com/pulse/ai-reflections-between-fear-hope-jimmy-campos-0hhje/?trackingId=C6gFC4GhSjiVycWcL%2BJCBg%3D%3D"
+        },
+        {
+          title: "My thoughts on AI (Spanish Blog Post)",
+          url: "https://www.linkedin.com/pulse/reflexiones-sobre-la-ia-entre-el-miedo-y-esperanza-jimmy-campos-dgoke/"
+        },
+        {
           title: "AI:900 Azure AI Fundamentals Certification (Learning Path)",
           url: "https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification"
         },
@@ -63,12 +71,8 @@ export const siteConfig = {
           url: "https://youtu.be/yqq_U2fxd2U?si=GQo6Bj-yJ1BLIhEN"
         },
         {
-          title: "My thoughts on AI (Blog Post)",
-          url: "https://www.linkedin.com/pulse/ai-reflections-between-fear-hope-jimmy-campos-0hhje/?trackingId=C6gFC4GhSjiVycWcL%2BJCBg%3D%3D"
-        },
-        {
-          title: "My thoughts on AI (Spanish Blog Post)",
-          url: "https://www.linkedin.com/pulse/reflexiones-sobre-la-ia-entre-el-miedo-y-esperanza-jimmy-campos-dgoke/"
+          title: "AI vs Machine Learning vs Deep Learning (Article)",
+          url: "https://www.ibm.com/think/topics/ai-vs-machine-learning-vs-deep-learning-vs-neural-networks"
         }
       ]
     }
