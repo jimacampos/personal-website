@@ -61,6 +61,14 @@ export const siteConfig = {
         {
           title: "Demo: Creating an AI Workflow (Youtube Video)",
           url: "https://youtu.be/yqq_U2fxd2U?si=GQo6Bj-yJ1BLIhEN"
+        },
+        {
+          title: "My thoughts on AI (Blog Post)",
+          url: "https://www.linkedin.com/pulse/ai-reflections-between-fear-hope-jimmy-campos-0hhje/?trackingId=C6gFC4GhSjiVycWcL%2BJCBg%3D%3D"
+        },
+        {
+          title: "My thoughts on AI (Spanish Blog Post)",
+          url: "https://www.linkedin.com/pulse/reflexiones-sobre-la-ia-entre-el-miedo-y-esperanza-jimmy-campos-dgoke/"
         }
       ]
     }
