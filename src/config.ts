@@ -115,6 +115,11 @@ export const siteConfig = {
     },
     {
       school: "Microsoft",
+      degree: "AZ-104: Microsoft Azure Administrator Associate",
+      dateRange: "2025"
+    },
+    {
+      school: "Microsoft",
       degree: "AZ-900: Microsoft Azure Fundamentals",
       dateRange: "2025"
     },
@@ -128,5 +133,16 @@ export const siteConfig = {
       degree: "Github Copilot Certified",
       dateRange: "2025"
     },
+  ],
+  events: [
+    {
+      name: "He for SWE (Society of Women Engineers)",
+      topic: "¿Podemos los hombres ser parte de SWE?",
+      date: "2025-08-28",
+      time: "6:30 PM - 7:30 PM CST",
+      registerUrl: "https://www.eventbrite.com/e/he-for-swe-podemos-los-hombres-ser-parte-de-swe-tickets-1531527643409",
+      hashtags: ["Diversity", "Inclusion", "Women In Engineering"]
+    }
+    
   ],
 };

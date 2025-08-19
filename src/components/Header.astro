@@ -4,6 +4,7 @@ import { siteConfig } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+const hasEvents = siteConfig.events && siteConfig.events.length > 0;
 const hasResources = siteConfig.resources && siteConfig.resources.length > 0;
 ---
 
@@ -42,6 +43,18 @@ const hasResources = siteConfig.resources && siteConfig.resources.length > 0;
               class="text-gray-700 hover:text-black transition-colors font-medium"
             >
               Education
+            </a>
+          </li>
+        )
+      }
+      {
+        hasEvents && (
+          <li>
+            <a
+              href="#events"
+              class="text-gray-700 hover:text-black transition-colors font-medium"
+            >
+              Next Events
             </a>
           </li>
         )

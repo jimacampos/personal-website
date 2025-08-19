@@ -1,0 +1,119 @@
+---
+import { siteConfig } from "../config";
+const hasEvents = siteConfig.events && siteConfig.events.length > 0;
+
+// Helper function to format date
+function formatDate(dateString: string) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  });
+}
+---
+
+{
+  hasEvents && (
+    <section id="events" class="p-8 sm:p-12 md:p-16 lg:p-24">
+      <div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <div class="lg:col-span-4">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
+              Next Events
+            </h2>
+            <div
+              class="w-[75px] h-[5px] mt-2 rounded-full"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
+          </div>
+
+          <div class="lg:col-span-8">
+            <div class="space-y-6">
+              {siteConfig.events.map((event, index) => (
+                <div class="group relative">
+                  <div class="block relative p-4 sm:p-6 md:p-8 bg-white rounded-xl sm:rounded-2xl border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-gray-300">
+                    <div class="space-y-4">
+                      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                          <span
+                            class="text-sm font-mono"
+                            style={{ color: siteConfig.accentColor }}
+                          >
+                            0{index + 1}
+                          </span>
+                          <h3 class="text-xl sm:text-2xl font-bold text-gray-900 mt-1">
+                            {event.name}
+                          </h3>
+                        </div>
+                        
+                        <a
+                          href={event.registerUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="inline-flex items-center px-4 py-2 rounded-lg text-sm font-medium text-white transition-all duration-200 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                          style={`background-color: ${siteConfig.accentColor}; focus:ring-color: ${siteConfig.accentColor}`}
+                        >
+                          Register
+                          <svg
+                            class="w-4 h-4 ml-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                            />
+                          </svg>
+                        </a>
+                      </div>
+
+                      <div class="space-y-2">
+                        <p class="text-base sm:text-lg font-medium text-gray-800">
+                          {event.topic}
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 text-sm text-gray-600">
+                          <div class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                            {formatDate(event.date)}
+                          </div>
+                          
+                          <div class="flex items-center">
+                            <svg class="w-4 h-4 mr-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            {event.time}
+                          </div>
+                        </div>
+                        
+                        {event.hashtags && event.hashtags.length > 0 && (
+                          <div class="flex flex-wrap gap-2 mt-3">
+                            {event.hashtags.map((hashtag) => (
+                              <span 
+                                class="inline-block px-2 py-1 text-xs font-medium rounded-md text-white"
+                                style={`background-color: ${siteConfig.accentColor}`}
+                              >
+                                {hashtag}
+                              </span>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
