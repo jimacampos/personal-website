@@ -75,6 +75,29 @@ export const siteConfig = {
           url: "https://www.ibm.com/think/topics/ai-vs-machine-learning-vs-deep-learning-vs-neural-networks"
         }
       ]
+    },
+    {
+      topic: "Tech Youtube Channels",
+      title: "My Recommended Tech YouTube Channels",
+      description: "A collection of YouTube channels that provide valuable insights into software development, news and AI.",
+      urls: [
+        {
+          title: "Fireship",
+          url: "https://www.youtube.com/@Fireship/"
+        },
+        {
+          title: "ColdFusion",
+          url: "https://www.youtube.com/@ColdFusion/"
+        },
+        {
+          title: "Platzi",
+          url: "https://www.youtube.com/@Platzi/"
+        },
+        {
+          title: "John Savill's Technical Training",
+          url: "https://www.youtube.com/@NTFAQGuy/"
+        }
+      ]
     }
   ],
   experience: [
