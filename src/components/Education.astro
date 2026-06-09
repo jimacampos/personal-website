@@ -9,22 +9,20 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
       <div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
-            <div class="flex items-center gap-4 mb-4 lg:mb-0">
-              <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
-                Education
-              </h2>
-              <button
-                id="education-toggle"
-                class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 hover:opacity-80 cursor-pointer flex-shrink-0"
-                style={`border-color: ${siteConfig.accentColor}; color: ${siteConfig.accentColor}`}
-                aria-label="Toggle education section"
-              >
-                <svg id="education-toggle-icon" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-                <span id="education-toggle-label">Collapse</span>
-              </button>
-            </div>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+              Education
+            </h2>
+            <button
+              id="education-toggle"
+              class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 hover:opacity-80 cursor-pointer mb-4 lg:mb-0"
+              style={`border-color: ${siteConfig.accentColor}; color: ${siteConfig.accentColor}`}
+              aria-label="Toggle education section"
+            >
+              <svg id="education-toggle-icon" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+              <span id="education-toggle-label">Collapse</span>
+            </button>
             <div
               class="w-[75px] h-[5px] mt-2 rounded-full"
               style={`background-color: ${siteConfig.accentColor}`}
