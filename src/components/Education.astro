@@ -9,9 +9,13 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
       <div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
-            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
               Education
             </h2>
+            <div
+              class="w-[75px] h-[5px] rounded-full mb-4"
+              style={`background-color: ${siteConfig.accentColor}`}
+            />
             <button
               id="education-toggle"
               class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 hover:opacity-80 cursor-pointer mb-4 lg:mb-0"
@@ -23,10 +27,6 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               </svg>
               <span id="education-toggle-label">Collapse</span>
             </button>
-            <div
-              class="w-[75px] h-[5px] mt-2 rounded-full"
-              style={`background-color: ${siteConfig.accentColor}`}
-            />
           </div>
 
           <div class="lg:col-span-8">
