@@ -9,23 +9,22 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
       <div>
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <div class="lg:col-span-4">
-            <button
-              id="education-toggle"
-              class="flex items-center gap-4 mb-4 lg:mb-0 group cursor-pointer hover:opacity-80 transition-opacity duration-300 text-left w-full"
-              aria-label="Toggle education section"
-            >
+            <div class="flex items-center gap-4 mb-4 lg:mb-0">
               <h2 class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900">
                 Education
               </h2>
-              <div
-                class="flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 group-hover:bg-gray-100"
-                style={`color: ${siteConfig.accentColor}`}
+              <button
+                id="education-toggle"
+                class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-sm font-medium transition-all duration-200 hover:opacity-80 cursor-pointer flex-shrink-0"
+                style={`border-color: ${siteConfig.accentColor}; color: ${siteConfig.accentColor}`}
+                aria-label="Toggle education section"
               >
-                <svg class="w-6 h-6 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg id="education-toggle-icon" class="w-4 h-4 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
-              </div>
-            </button>
+                <span id="education-toggle-label">Collapse</span>
+              </button>
+            </div>
             <div
               class="w-[75px] h-[5px] mt-2 rounded-full"
               style={`background-color: ${siteConfig.accentColor}`}
@@ -54,6 +53,19 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
                   </div>
                 </div>
               ))}
+
+              <div id="education-collapse-btn-wrapper" class="flex justify-center">
+                <button
+                  id="education-collapse-btn"
+                  class="flex items-center gap-2 px-4 py-2 rounded-full border text-sm font-medium transition-all duration-200 hover:opacity-80"
+                  style={`border-color: ${siteConfig.accentColor}; color: ${siteConfig.accentColor}`}
+                >
+                  <svg class="w-4 h-4 rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                  </svg>
+                  Collapse
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -65,38 +77,43 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.getElementById('education-toggle');
+    const collapseBtn = document.getElementById('education-collapse-btn');
     const content = document.getElementById('education-content');
-    const chevron = toggleButton?.querySelector('svg');
-    
-    if (!toggleButton || !content || !chevron) return;
-    
+    const icon = document.getElementById('education-toggle-icon');
+    const label = document.getElementById('education-toggle-label');
+
+    if (!toggleButton || !content || !icon) return;
+
     let isCollapsed = false;
     let contentHeight = content.scrollHeight;
 
-    // Set initial expanded state
     content.style.maxHeight = contentHeight + 'px';
-    chevron.style.transform = 'rotate(0deg)';
-    
+    icon.style.transform = 'rotate(180deg)';
+
+    function collapse() {
+      content.style.maxHeight = '0px';
+      icon.style.transform = 'rotate(0deg)';
+      if (label) label.textContent = 'Expand';
+      isCollapsed = true;
+    }
+
+    function expand() {
+      contentHeight = content.scrollHeight;
+      content.style.maxHeight = contentHeight + 'px';
+      icon.style.transform = 'rotate(180deg)';
+      if (label) label.textContent = 'Collapse';
+      isCollapsed = false;
+    }
+
     toggleButton.addEventListener('click', function() {
-      if (!isCollapsed) {
-        // Collapse
-        content.style.maxHeight = '0px';
-        content.style.paddingTop = '0px';
-        content.style.paddingBottom = '0px';
-        chevron.style.transform = 'rotate(-90deg)';
-        isCollapsed = true;
-      } else {
-        // Expand - recalculate height first
-        contentHeight = content.scrollHeight;
-        content.style.maxHeight = contentHeight + 'px';
-        content.style.paddingTop = '';
-        content.style.paddingBottom = '';
-        chevron.style.transform = 'rotate(0deg)';
-        isCollapsed = false;
-      }
+      isCollapsed ? expand() : collapse();
     });
-    
-    // Recalculate height on window resize
+
+    collapseBtn?.addEventListener('click', function() {
+      collapse();
+      toggleButton.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
     window.addEventListener('resize', function() {
       if (!isCollapsed) {
         contentHeight = content.scrollHeight;
