@@ -30,9 +30,6 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
               class="w-[75px] h-[5px] mt-2 rounded-full"
               style={`background-color: ${siteConfig.accentColor}`}
             />
-            <p class="text-sm text-gray-500 mt-4 lg:mt-6">
-              Click on the title above to view my educational background
-            </p>
           </div>
 
           <div class="lg:col-span-8">
@@ -73,12 +70,12 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
     
     if (!toggleButton || !content || !chevron) return;
     
-    let isCollapsed = true;
+    let isCollapsed = false;
     let contentHeight = content.scrollHeight;
-    
-    // Set initial collapsed state
-    content.style.maxHeight = '0px';
-    chevron.style.transform = 'rotate(-90deg)';
+
+    // Set initial expanded state
+    content.style.maxHeight = contentHeight + 'px';
+    chevron.style.transform = 'rotate(0deg)';
     
     toggleButton.addEventListener('click', function() {
       if (!isCollapsed) {
