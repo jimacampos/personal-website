@@ -98,6 +98,17 @@ export const siteConfig = {
           url: "https://www.youtube.com/@NTFAQGuy/"
         }
       ]
+    },
+    {
+      topic: "Systems Thinking",
+      title: "Systems Thinking Resources",
+      description: "Resources for understanding systems thinking and how it applies to software engineering and organizational design.",
+      urls: [
+        {
+          title: "Software Engineering at the Tipping Point (Google I/O 2026)",
+          url: "https://www.youtube.com/watch?v=2n41YjR5QfU&t=11s"
+        }
+      ]
     }
   ],
   experience: [
